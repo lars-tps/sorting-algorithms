@@ -71,10 +71,17 @@ def bubble_sort(seq: Generic[T], ascending: bool) -> None:
 class TestBubbleSort(unittest.TestCase):
 
     def test_bubble_sort(self):
-        ls = [1,4,3,2,6,5,7,9,10,8]
-        sorted_ls = [1,2,3,4,5,6,7,8,9,10]
+        ls = [1, 4, 3, 2, 6, 5, 7, 9, 10, 8]
+
+        # ascending test
         bubble_sort(ls, True)
+        sorted_ls = [1,2,3,4,5,6,7,8,9,10]
         self.assertEqual(ls, sorted_ls)
+
+        # descending test
+        bubble_sort(ls, False)
+        reverse_list = [10,9,8,7,6,5,4,3,2,1]
+        self.assertEqual(ls, reverse_list)
 
 
 if __name__ == "__main__":
